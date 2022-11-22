@@ -3,14 +3,39 @@ layout: page
 title: Contact us!
 permalink: /contact/
 ---
+<html>
+<?php
+if(!isset($_POST["submit"])){
+  echo "error; you need to submit the form!";
+}
+$name = $_POST['name'];
+$visitor_email = $_POST['email'];
+$message = $_POST['message'];
 
+if(empty($name) || empty($visitor_email)){
+  echo "Name and email are mandatory";
+  exit;
+}
+
+$email_from = "sadassa17@gmail.com";
+$email_subject = "New Form Submission";
+$email_body = "You have received a new message from the user $name. \n".
+            "email adress: $visitor_email. \n" . 
+            "Here is the message:\n $message".
+
+$to = "sadassa17@gmail.com";
+$headers = "From: $email_from \r\n";
+  mail($to, $email_subject, $email_body, $headers);
+}
+?>
+</html>
 <!-- Slider Start -->
 <section id="global-header">
   <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="block">
-          <h1>Drop Us A Note</h1>
+          <h1>CERTH</h1>
           <p>Don’t just take our word for it. Check out some of our latest work.</p>
         </div>
       </div>
@@ -23,27 +48,29 @@ permalink: /contact/
     <div class="row">
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <form>
+          <form action="mailto:sadassa17@gmail.com" method="get" enctype="text/plain" name="EmailFrom">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Your Name">
+              <label for="name">Enter Name:</label><br> 
+              <input type="text" name="name" class="form-control" placeholder="Your Name">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Email Address">
+              <label for="email">Enter Email:</label><br> 
+              <input type="text" name="email" class="form-control" placeholder="Email Address">
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Subject">
+              <label for="subject">Enter Subject:</label><br> 
+              <input type="text" name="subject" class="form-control" placeholder="Subject">
             </div>
-          </form>
         </div>
       </div>
       <div class="col-md-6 col-sm-12">
         <div class="block">
-          <form>
             <div class="form-group-2">
-              <textarea class="form-control" rows="3" placeholder="Your Message"></textarea>
+              <label for="message">Enter your Message:</label><br> 
+              <textarea style="height:200px;font-size:12pt;" class="form-control" name="message" rows="3" placeholder="Your Message"></textarea>
             </div>
-            <button class="btn btn-default" type="submit">Send Message</button>
-          </form>
+            <button class="btn btn-default" type="submit" value="Send">Send Message</button>
+        </form>
         </div>
       </div>
     </div>
@@ -53,37 +80,31 @@ permalink: /contact/
           <h2>Stop By For A visit</h2>
           <ul class="address-block">
             <li>
-              <i class="fa fa-map-marker"></i>North Main Street,Brooklyn Australia
+              <i class="fa fa-map-marker"></i>1ο χλμ Θέρμης - Πανοράματος, 57001, Θέρμη - Θεσσαλονίκη
             </li>
             <li>
-              <i class="fa fa-envelope-o"></i>Email: contact@mail.com
+              <i class="fa fa-envelope-o"></i>Email: zarpalas[at]iti.gr
             </li>
             <li>
-              <i class="fa fa-phone"></i>Phone:+88 01672 506 744
+              <i class="fa fa-phone"></i>Phone: +30 2310 464160
             </li>
           </ul>
 
           <ul class="social-icons">
             <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-google"></i></a>
+              <a href="https://www.certh.gr/" target="_blank"><i class="fa fa-google"></i></a>
             </li>
             <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-linkedin"></i></a>
+              <a href="https://www.linkedin.com/company/visual-computing-lab/mycompany/" target="_blank"><i class="fa fa-linkedin"></i></a>
             </li>
             <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-pinterest"></i></a>
+              <a href="https://twitter.com/VCL_ITI" target="_blank"><i class="fa fa-twitter"></i></a>
             </li>
             <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-dribbble"></i></a>
+              <a href="https://www.facebook.com/CERTHellas" target="_blank"><i class="fa fa-facebook"></i></a>
             </li>
             <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-behance"></i></a>
-            </li>
-            <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-twitter"></i></a>
-            </li>
-            <li>
-              <a href="http://www.themefisher.com"><i class="fa fa-facebook"></i></a>
+              <a href="https://www.youtube.com/channel/UCGbbUw3eDArKezM4CteODyw/featured" target="_blank"><i class="fa fa-youtube"></i></a>
             </li>
           </ul>
         </div>
@@ -93,7 +114,7 @@ permalink: /contact/
           <h2>We Also Count In Google Map</h2>
           <div class="google-map">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.472979439986!2d-73.97769068489596!3d40.7516207793276!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2590247c56379%3A0x15e13bea38b43e18!2sChrysler+Building!5e0!3m2!1sen!2sus!4v1477406538220"
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2548.991644541221!2d23.02020262445249!3d40.55751567715866!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8f1d2c672d470ac!2sCERTH%20-%20Office%20Building%20B!5e0!3m2!1sel!2sgr!4v1669023038349!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
               width="555" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
           </div>
         </div>
@@ -107,10 +128,8 @@ permalink: /contact/
     <div class="row">
       <div class="col-md-12">
         <div class="block">
-          <h2>We design delightful digital experiences.</h2>
-          <p>Read more about what we do and our philosophy of design. Judge for yourself The work and results we’ve
-            achieved for other clients, and meet our highly experienced Team who just love to design.</p>
-          <a class="btn btn-default btn-call-to-action" href="#">Tell Us Your Story</a>
+          <h2>More than 700 people work at CERTH.</h2>
+          <p>CERTH has participated successfully in more than 5,000 competitive research projects with a total budget exceeding 450M€ and involving more than 1,100 international partner organizations.</p>
         </div>
       </div>
     </div>

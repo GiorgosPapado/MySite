@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html class="no-js">
+  <head>
+
+    <meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Contact us!</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- theme meta -->
+<meta name="theme-name" content="VCL3D" />
+
+<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+<!-- CSS -->
+<link rel="stylesheet" href="/MySite/css/owl.carousel.css" />
+<link rel="stylesheet" href="/MySite/css/bootstrap.min.css" />
+<link rel="stylesheet" href="/MySite/css/font-awesome.min.css" />
+<link rel="stylesheet" href="/MySite/css/airspace.css" />
+<link rel="stylesheet" href="/MySite/css/style.css" />
+<link rel="stylesheet" href="/MySite/css/ionicons.min.css" />
+<link rel="stylesheet" href="/MySite/css/animate.css" />
+<link rel="stylesheet" href="/MySite/css/responsive.css" />
+<link rel="stylesheet" href="/MySite/css/syntax.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- Js -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
+<script src="/MySite/js/bootstrap.min.js"></script>
+<script src="/MySite/js/owl.carousel.min.js"></script>
+<script src="/MySite/js/plugins.js"></script>
+<script src="/MySite/js/min/waypoints.min.js"></script>
+<script src="/MySite/js/jquery.counterup.js"></script>
+
+
+<script src="/MySite/js/main.js"></script>
+
+
+
+  </head>
+  <body>
+
+
+    <!-- Header Start -->
+<header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <!-- header Nav Start -->
+      <nav class="navbar navbar-default">
+        <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/MySite/">
+              <div class="row">
+              <div class="col-md-6">
+                <img src="/MySite/img/mylogo.jpg" style="height:60px;" width="100" alt="Logo">
+              </div>
+              <div class="col-md-6">
+                <img src="/MySite/img/vcl-logo.png" style="height:60px;" width="100" alt="Logo2">
+              </div>
+              </div>
+            </a>
+          </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="/MySite/">Home</a></li>
+                <li><a href="/MySite/work">Work</a></li>
+                <li><a href="/MySite/blog">Blog</a></li>
+                <li><a href="/MySite/people">People</a></li> 
+                <li><a href="/MySite/contact">Contact</a></li>
+                <li><a href="/MySite/">Publications</a></li>
+                <li><a href="/MySite/">Research</a></li>
+                <li><a href="/MySite/">Software</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header><!-- header close -->
+
+
+
+    <html>
+<?php
+if(!isset($_POST["submit"])){
+  echo "error; you need to submit the form!";
+}
+$name = $_POST['name'];
+$visitor_email = $_POST['email'];
+$message = $_POST['message'];
+
+if(empty($name) || empty($visitor_email)){
+  echo "Name and email are mandatory";
+  exit;
+}
+
+$email_from = "sadassa17@gmail.com";
+$email_subject = "New Form Submission";
+$email_body = "You have received a new message from the user $name. \n".
+            "email adress: $visitor_email. \n" . 
+            "Here is the message:\n $message".
+
+$to = "sadassa17@gmail.com";
+$headers = "From: $email_from \r\n";
+  mail($to, $email_subject, $email_body, $headers);
+}
+?>
+</html>
+<!-- Slider Start -->
+<section id="global-header">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h1>CERTH</h1>
+          <p>Don’t just take our word for it. Check out some of our latest work.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- contact form start -->
+<section id="contact-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <form action="mailto:sadassa17@gmail.com" method="get" enctype="text/plain" name="EmailFrom">
+            <div class="form-group">
+              <label for="name">Enter Name:</label><br> 
+              <input type="text" name="name" class="form-control" placeholder="Your Name">
+            </div>
+            <div class="form-group">
+              <label for="email">Enter Email:</label><br> 
+              <input type="text" name="email" class="form-control" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+              <label for="subject">Enter Subject:</label><br> 
+              <input type="text" name="subject" class="form-control" placeholder="Subject">
+            </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+            <div class="form-group-2">
+              <label for="message">Enter your Message:</label><br> 
+              <textarea style="height:200px;font-size:12pt;" class="form-control" name="message" rows="3" placeholder="Your Message"></textarea>
+            </div>
+            <button class="btn btn-default" type="submit" value="Send">Send Message</button>
+        </form>
+        </div>
+      </div>
+    </div>
+    <div id="contact-box" class="row">
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <h2>Stop By For A visit</h2>
+          <ul class="address-block">
+            <li>
+              <i class="fa fa-map-marker"></i>1ο χλμ Θέρμης - Πανοράματος, 57001, Θέρμη - Θεσσαλονίκη
+            </li>
+            <li>
+              <i class="fa fa-envelope-o"></i>Email: zarpalas[at]iti.gr
+            </li>
+            <li>
+              <i class="fa fa-phone"></i>Phone: +30 2310 464160
+            </li>
+          </ul>
+
+          <ul class="social-icons">
+            <li>
+              <a href="https://www.certh.gr/" target="_blank"><i class="fa fa-google"></i></a>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/company/visual-computing-lab/mycompany/" target="_blank"><i class="fa fa-linkedin"></i></a>
+            </li>
+            <li>
+              <a href="https://twitter.com/VCL_ITI" target="_blank"><i class="fa fa-twitter"></i></a>
+            </li>
+            <li>
+              <a href="https://www.facebook.com/CERTHellas" target="_blank"><i class="fa fa-facebook"></i></a>
+            </li>
+            <li>
+              <a href="https://www.youtube.com/channel/UCGbbUw3eDArKezM4CteODyw/featured" target="_blank"><i class="fa fa-youtube"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="block">
+          <h2>We Also Count In Google Map</h2>
+          <div class="google-map">
+            <iframe
+            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2548.991644541221!2d23.02020262445249!3d40.55751567715866!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xc8f1d2c672d470ac!2sCERTH%20-%20Office%20Building%20B!5e0!3m2!1sel!2sgr!4v1669023038349!5m2!1sel!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+              width="555" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Call to action Start -->
+<section id="call-to-action">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="block">
+          <h2>More than 700 people work at CERTH.</h2>
+          <p>CERTH has participated successfully in more than 5,000 competitive research projects with a total budget exceeding 450M€ and involving more than 1,100 international partner organizations.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+    <!-- footer Start -->
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="footer-manu">
+          <ul>
+            <li><a href="/MySite/" class="fa fa-home" style="color: orange;"> Home</a></li>
+            <li><a href="#"><i class="material-icons" style="font-size:15px;color: yellowgreen;">public</i> About Us</a></li>
+            <li><a href="#" class="fa fa-pencil" style="color: aqua;font-size:16px"> Publications</a></li>
+            <li><a href="#"><i class="material-icons" style="font-size:15px;color:red">description</i> Projects</a></li>
+            <li><a href="/MySite/contact" class="fa fa-envelope" style="color: blue;"> Contact us</a></li>
+            <li><a href="#"><i class="material-icons" style="font-size:26px;color:blueviolet;">3d_rotation</i>Careers</a></li>
+            <li><a href="/MySite/blog" class="fa fa-book" style="color: green;"> Blog</a></li>
+            <li><a href="/MySite/work"><i class="material-icons" style="font-size:15px;color: yellowgreen;">extension</i> Work</a></li>
+          </ul>
+        </div>
+        <p>Copyright &copy; Design &amp; Developed by <a href="https://github.com/VCL3D">VCL3D <script>document.write(new Date().getFullYear())</script></a>. All rights reserved.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </body>
+</html>
